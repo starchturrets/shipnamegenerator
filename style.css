@@ -1,0 +1,109 @@
+/*
+Objectives:
+- Refactor code.
+- Improve classname methodology
+- Remove IDs and attribute selector
+*/
+/* Define the "system" font family */
+@font-face {
+    font-family: system;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    transition: 0.1s all ease-in-out;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 200%;
+}
+
+body {
+    font-family: "system";
+    /*'Segoe UI', Arial, Helvetica, sans-serif;*/
+    margin: 0;
+    padding: 0;
+    /*   background: linear-gradient(to left, #2193b0, #6dd5ed);*/
+    background: linear-gradient(to right, #ECEFF1, #E1F5FE);
+    height: 100vh;
+}
+
+input[type="text"] {
+    display: block;
+    padding: 0.5em;
+    width: 100%;
+}
+
+input[type="text"]:focus {
+    background: rgb(197, 195, 195);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#inputs {
+    width: 65%;
+    min-height: 30em;
+    /*  width: 100vw;
+    height: 100vh;*/
+    margin: 6.9% auto;
+    padding: 34px 54px;
+    border-radius: 6.9px;
+    background: linear-gradient(45deg, #eeeeee, rgb(197, 195, 195));
+    /* box-shadow: -7px 7px 6px rgb(112, 112, 112);*/
+}
+
+#inputs h2 {
+    text-transform: capitalize;
+}
+
+input[type="text"] {
+    display: block;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    border-style: none;
+    font-size: 0.69em;
+    font-family: inherit;
+    margin: 0.5rem;
+}
+
+#second_name {
+    display: none;
+}
+
+button {
+    background-color: #d64078;
+    color: white;
+    font-size: 0.69em;
+    border: solid #b03060 1px;
+    border-bottom: solid #b03060 4px;
+    text-shadow: 0px 2px 0 #b03060;
+    border-radius: 0.15em;
+    outline: none;
+    box-shadow: 0px 3px 0px 0px;
+    margin: 0.1rem 0;
+}
+
+button:active {
+    border-bottom: 0;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1em;
+    padding: 0;
+}
+
+#output {
+    font-size: 69%;
+}
+
+section {
+    font-weight: 400;
+}
