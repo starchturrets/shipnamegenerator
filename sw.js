@@ -1,24 +1,24 @@
 //With special thanks to Brad Traversy for his awesome videos
-const cacheName = 'v1';
-const cacheAssets = [
-	'/',
-	'index.html',
-	'style.css',
-	'script.js',
-	'/src/favicons/apple-touch-icon.png',
-	'/src/favicons/favicon-32x32.png',
-	'/src/favicons/favicon-16x16.png',
-	'/src/favicons/site.webmanifest',
-	'/src/favicons/safari-pinned-tab.svg',
-	'/src/favicons/favicon.ico'
-];
 
 self.addEventListener('install', (event) => {
 	console.log('Service worker activated.');
 	event.waitUntil(
 		caches
-			.open(cacheName)
-			.then((cache) => cache.addAll(cacheAssets))
+			.open('v1')
+			.then((cache) =>
+				cache.addAll([
+					'/',
+					'index.html',
+					'style.css',
+					'script.js',
+					'/src/favicons/apple-touch-icon.png',
+					'/src/favicons/favicon-32x32.png',
+					'/src/favicons/favicon-16x16.png',
+					'/src/favicons/site.webmanifest',
+					'/src/favicons/safari-pinned-tab.svg',
+					'/src/favicons/favicon.ico'
+				])
+			)
 			.then(() => self.skipWaiting())
 			.catch(() => console.log('I have failed. Again'))
 	);
@@ -42,7 +42,7 @@ self.addEventListener('activate', (e) => {
 		caches.keys().then((cacheNames) => {
 			return Promise.all(
 				cacheNames.map((cache) => {
-					if (cache !== cacheName) {
+					if (cache !== 'v1') {
 						console.log('Service Worker: Clearing Old Cache');
 						return caches.delete(cache);
 					}
