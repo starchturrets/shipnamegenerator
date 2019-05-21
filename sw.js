@@ -1,10 +1,30 @@
+//With special thanks to Brad Traversy for his awesome videos
+const cacheName = 'v3';
+const cacheAssets = ['/', 'index.html', 'style.css', 'script.js'];
 self.addEventListener('install', (event) => {
 	event.waitUntil(
-		caches.open('v1').then((cache) => {
-			return cache.addAll(['/', 'index.html', 'style.css', 'script.js']);
-		})
+		caches
+			.open(cacheName)
+			.then((cache) => cache.addAll(cacheAssets))
+			.then(() => self.skipWaiting())
+			.catch(() => console.log('I have failed. Again'))
 	);
 });
-self.addEventListener('fetch', (event) => {
-	event.respondWith(caches.match(event.request));
+self.addEventListener('activate', (e) => {
+	e.waitUntil(caches.keys).then((cacheNames) => {
+		return Promise.all(
+			cacheNames.map((cache) => {
+				if (cache !== cacheName) {
+					return caches.delete(cache);
+				}
+			})
+		);
+	});
+});
+self.addEventListener('fetch', (e) => {
+	e.respondWith(
+		fetch(e.request).catch(() => {
+			caches.match(e.request);
+		})
+	);
 });
