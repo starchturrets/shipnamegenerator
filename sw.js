@@ -1,5 +1,5 @@
 //With special thanks to Brad Traversy for his awesome videos
-const cacheName = 'Testing';
+const cacheName = 'v1';
 const cacheAssets = [
 	'/',
 	'index.html',
