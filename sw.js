@@ -1,6 +1,7 @@
 //With special thanks to Brad Traversy for his awesome videos
 const cacheName = 'Testing';
 const cacheAssets = [
+	'/',
 	'index.html',
 	'style.css',
 	'script.js',
