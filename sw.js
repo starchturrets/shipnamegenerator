@@ -11,7 +11,9 @@ const cacheAssets = [
 	'src/favicons/favicon-16x16.png',
 	'src/favicons/site.webmanifest',
 	'src/favicons/safari-pinned-tab.svg',
-	'src/favicons/favicon.ico'
+	'src/favicons/favicon.ico',
+	'src/favicons/android-chrome-192x192.png',
+	'src/favicons/android-chrome-512x512.png'
 ];
 /*self.addEventListener('install', (event) => {
 	console.log('Service worker activated.');
