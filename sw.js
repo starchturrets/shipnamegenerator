@@ -1,9 +1,10 @@
-//With special thanks to Brad Traversy for his awesome videos
+//Thank God for Brad Traversy Media
 const cacheName = 'v1';
-const cacheAssets = [
+const cacheAssets = [ //Stuff to cache
 	'/',
 	'index.html',
-	'sw.js',
+    'sw.js',
+    'manifest.json',
 	'src/css/style.css', //All this time and it was the f***ing path!
 	'src/js/script.js',
 	'src/favicons/apple-touch-icon.png',
