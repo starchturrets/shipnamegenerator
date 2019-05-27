@@ -1,2 +1,2 @@
 # shipnamegenerator
-A webapp for creating couple names. Currently hosted on [here](https://quirky-hodgkin-474a61.netlify.com/).
+A simple webapp for creating couple names. Currently hosted on [netlify](https://quirky-hodgkin-474a61.netlify.com/). No webpack, no fancy build steps, just vanilla JavaScript and CSS.

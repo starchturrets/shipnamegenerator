@@ -1,10 +1,11 @@
 //Thank God for Brad Traversy Media
 const cacheName = 'v1';
-const cacheAssets = [ //Stuff to cache
+const cacheAssets = [
+	//Stuff to cache
 	'/',
 	'index.html',
-    'sw.js',
-    'manifest.json',
+	'sw.js',
+	'manifest.json',
 	'src/css/style.css', //All this time and it was the f***ing path!
 	'src/js/script.js',
 	'src/favicons/apple-touch-icon.png',
@@ -16,20 +17,7 @@ const cacheAssets = [ //Stuff to cache
 	'src/favicons/android-chrome-192x192.png',
 	'src/favicons/android-chrome-512x512.png'
 ];
-/*self.addEventListener('install', (event) => {
-	console.log('Service worker activated.');
-	event.waitUntil(
-		caches
-			.open('v1')
-			.then((cache) => {
-				return cache.addAll([
 
-				]);
-			})
-			.then(() => self.skipWaiting())
-			.catch(() => console.log('I have failed. Again'))
-	);
-});*/
 self.addEventListener('install', (event) => {
 	event.waitUntil(
 		caches.open(cacheName).then((cache) => {
@@ -37,17 +25,7 @@ self.addEventListener('install', (event) => {
 		})
 	);
 });
-/*self.addEventListener('activate', (e) => {
-	e.waitUntil(caches.keys).then((cacheNames) => {
-		return Promise.all(
-			cacheNames.map((cache) => {
-				if (cache !== cacheName) {
-					return caches.delete(cache);
-				}
-			})
-		);
-	});
-});*/
+
 // Call Activate Event
 self.addEventListener('activate', (e) => {
 	console.log('Service Worker: Activated');
@@ -71,3 +49,4 @@ self.addEventListener('fetch', (e) => {
 	console.log('Service Worker: Fetching');
 	e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
 });
+//TODO: wrap the fetch request in another promise, and abort it after ~5 seconds
