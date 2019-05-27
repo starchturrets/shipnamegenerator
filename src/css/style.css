@@ -95,8 +95,8 @@ li::before {
 	}
 	a {
 		position: fixed;
-		top: 5%;
-		left: 95%;
+		top: 3%;
+		left: 94%;
 		transform: rotate(45deg);
 	}
 }
