@@ -95,13 +95,17 @@ li::before {
 	}
 	a {
 		position: fixed;
-		top: 3%;
-		left: 94%;
+		top: 1%;
+		left: 89%;
 		transform: rotate(45deg);
 	}
 }
 @media (min-width: 1000px) {
 	.container {
 		max-width: 25%;
+	}
+	a {
+		top: 3%;
+		left: 94%;
 	}
 }
