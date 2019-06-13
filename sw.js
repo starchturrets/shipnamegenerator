@@ -4,7 +4,7 @@ const cacheAssets = [
   //Stuff to cache
   '/',
   'index.html',
-  'sw.js',
+  '/sw.js',
   'manifest.json',
   'src/css/style.css', //All this time and it was the f***ing path!
   'src/js/script.js',
