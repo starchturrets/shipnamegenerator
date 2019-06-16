@@ -2,7 +2,6 @@
 const cacheName = 'v1';
 const cacheAssets = [
   //Stuff to cache
-  '/',
   './index.html',
   '/sw.js',
   '/manifest.json',
