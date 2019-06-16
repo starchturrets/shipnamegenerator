@@ -3,19 +3,19 @@ const cacheName = 'v1';
 const cacheAssets = [
   //Stuff to cache
   '/',
-  'index.html',
-  '/sw.js',
-  'manifest.json',
-  'src/css/style.css', //All this time and it was the f***ing path!
-  'src/js/script.js',
-  'src/favicons/apple-touch-icon.png',
-  'src/favicons/favicon-32x32.png',
-  'src/favicons/favicon-16x16.png',
-  'src/favicons/site.webmanifest',
-  'src/favicons/safari-pinned-tab.svg',
-  'src/favicons/favicon.ico',
-  'src/favicons/android-chrome-192x192.png',
-  'src/favicons/android-chrome-512x512.png'
+  './index.html',
+  './sw.js',
+  './manifest.json',
+  './src/css/style.css', //All this time and it was the f***ing path!
+  './src/js/script.js',
+  './src/favicons/apple-touch-icon.png',
+  './src/favicons/favicon-32x32.png',
+  './src/favicons/favicon-16x16.png',
+  './src/favicons/site.webmanifest',
+  './src/favicons/safari-pinned-tab.svg',
+  './src/favicons/favicon.ico',
+  './src/favicons/android-chrome-192x192.png',
+  './src/favicons/android-chrome-512x512.png'
 ];
 
 self.addEventListener('install', (event) => {
