@@ -3,10 +3,6 @@ const cacheName = 'v1';
 const cacheAssets = [
   //Stuff to cache
   '/',
-  '/src',
-  '/src/favicons',
-  '/src/css',
-  '/src/js',
   './index.html',
   '/sw.js',
   '/manifest.json',
