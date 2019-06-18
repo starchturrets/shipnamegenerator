@@ -6,16 +6,16 @@ const cacheAssets = [
   './index.html',
   // 'sw.js',
   './manifest.json',
-  './browserconfig.xml',
+  './src/assets/browserconfig.xml',
   './src/css/style.css', //All this time and it was the f***ing path!
   './src/js/script.js',
-  './apple-touch-icon.png',
-  './favicon-32x32.png',
-  './favicon-16x16.png',
-  './safari-pinned-tab.svg',
-  './favicon.ico',
-  './android-chrome-192x192.png',
-  './android-chrome-512x512.png'
+  './src/assets/apple-touch-icon.png',
+  './src/assets/favicon-32x32.png',
+  './src/assets/favicon-16x16.png',
+  './src/assets/safari-pinned-tab.svg',
+  './src/assets/favicon.ico',
+  './src/assets/android-chrome-192x192.png',
+  './src/assets/android-chrome-512x512.png'
 ];
 
 self.addEventListener('install', event => {
