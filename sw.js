@@ -48,17 +48,16 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   console.log('Service Worker: Fetching');
   e.respondWith(
-    caches.match(e.request).then(request => {
-      return request || fetch(e.request);
+    ajax(e.request).catch(() => {
+      console.log(e.request);
+      return caches.match(e.request);
     })
   );
 });
 //TODO: wrap the fetch request in another promise, and abort it after ~5 seconds
-// function ajax(url, timeout = 1000) {
-//   return new Promise((resolve, reject) => {
-//     fetch(url)
-//       // .then((res) => res.json())
-//       .then(data => resolve(data));
-//     setTimeout(() => reject('Request failed'), timeout);
-//   });
-// }
+function ajax(url, timeout = 300) {
+  return new Promise((resolve, reject) => {
+    fetch(url).then(resolve);
+    setTimeout(() => reject('Request failed'), timeout);
+  });
+}
