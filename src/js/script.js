@@ -1,10 +1,10 @@
 'use strict';
-document.querySelector('h2').addEventListener('click', () => window.location.reload(true));
 
 //Let's not make too many calls to document.querySelector()
 
 const firstInput = document.querySelector('#first_input');
 const secondInput = document.querySelector('#second_input');
+const h2 = document.querySelector('h2');
 const output = document.querySelector('#output');
 
 firstInput.focus();
@@ -13,6 +13,11 @@ firstInput.addEventListener('keyup', ev => {
 
   //If the key pressed is the enter key, switch focus
   ev.keyCode === 13 && firstInput.value ? secondInput.focus() : '';
+});
+h2.addEventListener('click', () => {
+  firstInput.value = null;
+  secondInput.value = null;
+  output.innerHTML = null;
 });
 secondInput.addEventListener('keyup', ev => {
   ev.preventDefault();
