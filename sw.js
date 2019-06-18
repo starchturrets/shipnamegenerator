@@ -5,7 +5,7 @@ const cacheAssets = [
   '/',
   './index.html',
   '/sw.js',
-  '/manifest.json',
+  // '/manifest.json',
   '/src/css/style.css', //All this time and it was the f***ing path!
   '/src/js/script.js'
   // '/src/favicons/apple-touch-icon.png',
