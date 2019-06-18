@@ -2,20 +2,20 @@
 const cacheName = 'v1';
 const cacheAssets = [
   //Stuff to cache
-  // '/',
+  './',
   './index.html',
-  '/sw.js',
-  // '/manifest.json',
-  '/src/css/style.css', //All this time and it was the f***ing path!
-  '/src/js/script.js'
-  // '/src/favicons/apple-touch-icon.png',
-  // '/src/favicons/favicon-32x32.png',
-  // '/src/favicons/favicon-16x16.png',
-  // '/src/favicons/site.webmanifest',
-  // '/src/favicons/safari-pinned-tab.svg',
-  // '/src/favicons/favicon.ico',
-  // '/src/favicons/android-chrome-192x192.png',
-  // '/src/favicons/android-chrome-512x512.png'
+  // 'sw.js',
+  './manifest.json',
+  './browserconfig.xml',
+  './src/css/style.css', //All this time and it was the f***ing path!
+  './src/js/script.js',
+  './apple-touch-icon.png',
+  './favicon-32x32.png',
+  './favicon-16x16.png',
+  './safari-pinned-tab.svg',
+  './favicon.ico',
+  './android-chrome-192x192.png',
+  './android-chrome-512x512.png'
 ];
 
 self.addEventListener('install', event => {
@@ -48,9 +48,8 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   console.log('Service Worker: Fetching');
   e.respondWith(
-    fetch(e.request).catch(() => {
-      caches.match(e.request);
-      console.log('Responding from cache');
+    caches.match(e.request).then(request => {
+      return request || fetch(e.request);
     })
   );
 });
